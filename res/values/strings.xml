@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Colorwars</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Play">PLAY</string>
+    <string name="Help">Help</string>
+    <string name="AboutUs">About Us</string>
+    <string name="C1">Player 1 color</string>
+    <string name="C2">Player 2 color</string>
+    <string name="C3">Player 3 color</string>
+    <string name="C4">Player 4 color</string>
+    <string name="Time">Time Limit(min)</string>
+    <string name="Moves">Moves Limit</string>
+    <string name="BallColor">Color</string>
+    <string name="GameMode">Game Mode:</string>
+     <string name="Left">Left</string>
+    <string name="Bottom">Bottom</string>
+    <string name="Top">Top</string>
+    <string name="Right">Right</string>
+
+</resources>
