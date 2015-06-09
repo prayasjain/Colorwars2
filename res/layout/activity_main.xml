@@ -2,91 +2,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+  android:background="@color/mainscreen"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.colorwars.MainActivity"
-    android:background="@drawable/b3" >
+    tools:context="com.example.colorwars.MainActivity" >
 
     <TextView
-        android:id="@+id/TextView02"
+        android:id="@+id/tvcw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Button01"
-        android:typeface="monospace"
-        android:layout_alignBottom="@+id/Button01"
-        android:layout_alignLeft="@+id/textView1"
-        android:text="@string/AboutUs"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:typeface="monospace"
-        android:layout_alignBaseline="@+id/Button02"
-        android:layout_alignBottom="@+id/Button02"
-        android:layout_toRightOf="@+id/Button02"
-        android:text="@string/Play"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:typeface="monospace"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignLeft="@+id/TextView02"
-        android:text="@string/Help"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:typeface="monospace"
-        android:layout_width="wrap_content"
-        android:layout_height="50sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp"
-        android:text="@string/app_name"
+        android:text="Color\nWars"
+        android:gravity="center"
+        
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF"
-        android:textSize="35sp" />
-
-    <Button
-        android:id="@+id/Button01"
-        android:layout_width="60sp"
-        android:layout_height="60sp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="82dp"
-        android:layout_toLeftOf="@+id/TextView02"
-        android:background="@drawable/aboutus" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="60sp"
-        android:layout_height="60sp"
-        android:layout_above="@+id/Button01"
-        android:layout_marginBottom="14dp"
-        android:layout_toLeftOf="@+id/TextView01"
-        android:background="@drawable/question" />
+        android:textColor="#3D4C53"
+        android:textSize="70sp"
+        android:typeface="monospace" />
 
     <Button
         android:id="@+id/Button02"
-        android:layout_width="60sp"
-        android:layout_height="60sp"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/button1"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/playbutton"
+        android:shadowColor="#A84300"
+        android:shadowDx="1"
+        android:shadowDy="0"
+        android:shadowRadius="7"
+        android:text="Play"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/contactbutton"
+        android:shadowColor="#A84300"
+        android:shadowDx="1"
+        android:shadowDy="0"
+        android:shadowRadius="7"
+        android:text="Contact Us"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/Button01"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-        android:layout_marginLeft="24dp"
-        android:background="@drawable/play" />
+        android:background="@drawable/helpbutton"
+        android:shadowColor="#A84300"
+        android:shadowDx="1"
+        android:shadowDy="0"
+        android:shadowRadius="7"
+        android:text="Help"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
 </RelativeLayout>
