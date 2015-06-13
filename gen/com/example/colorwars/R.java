@@ -78,7 +78,7 @@ public final class R {
     public static final class id {
         public static final int Bottom=0x7f09003b;
         public static final int Button01=0x7f090008;
-        public static final int Button02=0x7f090006;
+        public static final int Button02=0x7f090007;
         public static final int Button03=0x7f090014;
         public static final int Button04=0x7f090011;
         public static final int Button05=0x7f090010;
@@ -117,7 +117,7 @@ public final class R {
         public static final int bluepower2=0x7f09002d;
         public static final int bluepower3=0x7f09002c;
         public static final int bscore=0x7f090032;
-        public static final int button1=0x7f090007;
+        public static final int button1=0x7f090006;
         public static final int button10=0x7f09004c;
         public static final int button11=0x7f09004d;
         public static final int button2=0x7f09000a;
