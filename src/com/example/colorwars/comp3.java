@@ -511,8 +511,8 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 		// TODO Auto-generated method stub
 
 		for (i = 0; i < transi.size(); i++) {
-			//checktranscolor(B[transi.get(i)][transj.get(i)]) ;
-			B[transi.get(i)][transj.get(i)].setBackgroundResource(R.drawable.yellowgreen);
+			checktranscolor(B[transi.get(i)][transj.get(i)]) ;
+		//	B[transi.get(i)][transj.get(i)].setBackgroundResource(R.drawable.yellowgreen);
 		}
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable() {
@@ -1070,7 +1070,8 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 	// Eliminate other balls functions
 	// Moving Left
 	public void moveleft() {
-
+		transi.clear();
+		transj.clear();
 		if (t == 'R') {
 
 			for (i = 0; i < 5; i++) {
@@ -1087,6 +1088,8 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 					if (A[i][l - 1] == 2 && A[i][l] == 1) {
 						A[i][l - 1] = 1;
 						totscore1++;
+						transi.add(i);
+						transj.add(l - 1);
 					}
 				}
 			}
@@ -1131,6 +1134,8 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 	// Move Up
 	public void moveup() {
 		if (t == 'B') {
+			transi.clear();
+			transj.clear();
 
 			for (i = 0; i < 5; i++) {
 				for (j = 0, c = 0; j < 5; j++) {
@@ -1146,6 +1151,8 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 					if (A[l - 1][i] == 1 && A[l][i] == 2) {
 						A[l - 1][i] = 2;
 						totscore++;
+						transi.add(l - 1);
+						transj.add(i);
 					}
 				}
 			}
@@ -1157,6 +1164,8 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 	// Move down
 	public void movedown() {
 		if (t == 'B') {
+			transi.clear();
+			transj.clear();
 
 			for (i = 4; i >= 0; i--) {
 				for (j = 4, c = 4; j >= 0; j--) {
@@ -1172,6 +1181,8 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 					if (A[l + 1][i] == 1 && A[l][i] == 2) {
 						A[l + 1][i] = 2;
 						totscore++;
+						transi.add(l + 1);
+						transj.add(i);
 					}
 				}
 			}
