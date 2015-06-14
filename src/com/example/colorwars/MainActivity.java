@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 	Button Play, About, Help;
-	Typeface font;
+	Typeface font,comic;
 	TextView cw;
 	ViewGroup ourView;
 	float pos ;
@@ -41,7 +41,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		ourView = (ViewGroup) inflater.inflate(R.layout.activity_main, null);
 
 		setContentView(ourView);
-
+		
 		Play = (Button) findViewById(R.id.Button02);
 		Help = (Button) findViewById(R.id.button1);
 		About = (Button) findViewById(R.id.Button01);
@@ -52,6 +52,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		Context context = MainActivity.this;
 		font = Typeface.createFromAsset(context.getAssets(), "font1.ttf");
 		cw.setTypeface(font);
+		comic =Typeface.createFromAsset(context.getAssets(), "comic.ttf");
+	
+		
+		Play.setTypeface(comic);
+		Help.setTypeface(comic);
+		About.setTypeface(comic);
 		
 	}
 
