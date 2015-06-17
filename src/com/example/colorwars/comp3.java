@@ -28,7 +28,7 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 	 */
 	ArrayList<Integer> transi, transj;
 	float sx = 0, fx = 0;
-	
+
 	public Button Left, Right, Top, Bottom, rpower1, rpower2, rpower3, bpower1,
 			bpower2, bpower3, undo, set, over;
 	public int A[][] = { { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 },
@@ -511,8 +511,8 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 		// TODO Auto-generated method stub
 
 		for (i = 0; i < transi.size(); i++) {
-			checktranscolor(B[transi.get(i)][transj.get(i)]) ;
-		//	B[transi.get(i)][transj.get(i)].setBackgroundResource(R.drawable.yellowgreen);
+			checktranscolor(B[transi.get(i)][transj.get(i)]);
+			// B[transi.get(i)][transj.get(i)].setBackgroundResource(R.drawable.yellowgreen);
 		}
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable() {
@@ -819,17 +819,65 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 			c2 = rand(4);
 			c2++;
 		}
-		
-		// c2=intent.getIntExtra("color2", 0);
-		// c3=intent.getIntExtra("color3", 0);
-		// c4=intent.getIntExtra("color4", 0);
+		bridgeview();
 
-		// time=intent.getIntExtra("timelimit", 0);
-		// move=intent.getIntExtra("movelimit", 0);
-		// ==================================================================================================
+		clickable();
 
-		// References to XML file
-		// ==================================================================================================
+		color();
+
+		display();
+		doneundo = 1;
+
+	}
+
+	private void clickable() {
+		// TODO Auto-generated method stub
+		rpower1.setOnClickListener(this);
+		rpower2.setOnClickListener(this);
+		rpower3.setOnClickListener(this);
+
+		over.setOnClickListener(this);
+		undo.setOnClickListener(this);
+		set.setOnClickListener(this);
+		B[0][0].setOnClickListener(this);
+		B[0][1].setOnClickListener(this);
+		B[0][2].setOnClickListener(this);
+		B[0][3].setOnClickListener(this);
+		B[0][4].setOnClickListener(this);
+
+		B[1][0].setOnClickListener(this);
+		B[1][1].setOnClickListener(this);
+		B[1][2].setOnClickListener(this);
+		B[1][3].setOnClickListener(this);
+		B[1][4].setOnClickListener(this);
+
+		B[2][0].setOnClickListener(this);
+		B[2][1].setOnClickListener(this);
+		B[2][2].setOnClickListener(this);
+		B[2][3].setOnClickListener(this);
+		B[2][4].setOnClickListener(this);
+
+		B[3][0].setOnClickListener(this);
+		B[3][1].setOnClickListener(this);
+		B[3][2].setOnClickListener(this);
+		B[3][3].setOnClickListener(this);
+		B[3][4].setOnClickListener(this);
+
+		B[4][0].setOnClickListener(this);
+		B[4][1].setOnClickListener(this);
+		B[4][2].setOnClickListener(this);
+		B[4][3].setOnClickListener(this);
+		B[4][4].setOnClickListener(this);
+
+		Left.setOnClickListener(this);
+		Right.setOnClickListener(this);
+
+		// Top.setOnClickListener(this);
+		// Bottom.setOnClickListener(this);
+	}
+
+	private void bridgeview() {
+		// TODO Auto-generated method stub
 		name1 = (TextView) findViewById(R.id.textView2);
 		name2 = (TextView) findViewById(R.id.textView1);
 		movec1 = (TextView) findViewById(R.id.textView5);
@@ -877,61 +925,6 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 		bpower1 = (Button) findViewById(R.id.bluepower1);
 		bpower2 = (Button) findViewById(R.id.bluepower2);
 		bpower3 = (Button) findViewById(R.id.bluepower3);
-		// ================================================================================================================================
-
-		// Setting buttons clickable
-		// ================================================================================================================================
-		rpower1.setOnClickListener(this);
-		rpower2.setOnClickListener(this);
-		rpower3.setOnClickListener(this);
-		// bpower1.setOnClickListener(this);
-		// bpower2.setOnClickListener(this);
-		// bpower3.setOnClickListener(this);
-		over.setOnClickListener(this);
-		undo.setOnClickListener(this);
-		set.setOnClickListener(this);
-		B[0][0].setOnClickListener(this);
-		B[0][1].setOnClickListener(this);
-		B[0][2].setOnClickListener(this);
-		B[0][3].setOnClickListener(this);
-		B[0][4].setOnClickListener(this);
-
-		B[1][0].setOnClickListener(this);
-		B[1][1].setOnClickListener(this);
-		B[1][2].setOnClickListener(this);
-		B[1][3].setOnClickListener(this);
-		B[1][4].setOnClickListener(this);
-
-		B[2][0].setOnClickListener(this);
-		B[2][1].setOnClickListener(this);
-		B[2][2].setOnClickListener(this);
-		B[2][3].setOnClickListener(this);
-		B[2][4].setOnClickListener(this);
-
-		B[3][0].setOnClickListener(this);
-		B[3][1].setOnClickListener(this);
-		B[3][2].setOnClickListener(this);
-		B[3][3].setOnClickListener(this);
-		B[3][4].setOnClickListener(this);
-
-		B[4][0].setOnClickListener(this);
-		B[4][1].setOnClickListener(this);
-		B[4][2].setOnClickListener(this);
-		B[4][3].setOnClickListener(this);
-		B[4][4].setOnClickListener(this);
-
-		Left.setOnClickListener(this);
-		Right.setOnClickListener(this);
-		// Top.setOnClickListener(this);
-		// Bottom.setOnClickListener(this);
-		color();
-		// =========================================================================================================================
-
-		// Display initial game screen
-		// =========================================================================================================================
-		display();
-		doneundo = 1;
-		// =========================================================================================================================
 	}
 
 	// Preparatory function for undo
@@ -1192,68 +1185,68 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 	}
 
 	public void checktranscolor(Button b) {
-		TextView debug =(TextView)findViewById(R.id.tvdebug);
-		debug.setText(String.valueOf(c1)+" "+String.valueOf(c2));
+		TextView debug = (TextView) findViewById(R.id.tvdebug);
+		debug.setText(String.valueOf(c1) + " " + String.valueOf(c2));
 		if (c1 == 1) {
-			if (c2 == 1) { 
-				
-				b.setBackgroundResource(R.drawable.red) ;
+			if (c2 == 1) {
+
+				b.setBackgroundResource(R.drawable.red);
 
 			} else if (c2 == 2) {
-				b.setBackgroundResource(R.drawable.purple) ;
+				b.setBackgroundResource(R.drawable.purple);
 
 			} else if (c3 == 3) {
-				b.setBackgroundResource(R.drawable.redgreen) ;
+				b.setBackgroundResource(R.drawable.redgreen);
 
 			} else if (c4 == 4) {
-				b.setBackgroundResource(R.drawable.redyellow) ;
+				b.setBackgroundResource(R.drawable.redyellow);
 
 			}
 		} else if (c1 == 2) {
 			if (c2 == 1) {
-				b.setBackgroundResource(R.drawable.purple) ;
+				b.setBackgroundResource(R.drawable.purple);
 
 			} else if (c2 == 2) {
-				b.setBackgroundResource(R.drawable.blue) ;
+				b.setBackgroundResource(R.drawable.blue);
 
 			} else if (c3 == 3) {
-				b.setBackgroundResource(R.drawable.bluegreen) ;
+				b.setBackgroundResource(R.drawable.bluegreen);
 
 			} else if (c4 == 4) {
-				b.setBackgroundResource(R.drawable.blueyellow) ;
+				b.setBackgroundResource(R.drawable.blueyellow);
 
 			}
 		} else if (c1 == 3) {
 
 			if (c2 == 1) {
-				b.setBackgroundResource(R.drawable.redgreen) ;
+				b.setBackgroundResource(R.drawable.redgreen);
 
 			} else if (c2 == 2) {
-				b.setBackgroundResource(R.drawable.bluegreen) ;
+				b.setBackgroundResource(R.drawable.bluegreen);
 
 			} else if (c3 == 3) {
-				b.setBackgroundResource(R.drawable.green) ;
+				b.setBackgroundResource(R.drawable.green);
 
 			} else if (c4 == 4) {
-				b.setBackgroundResource(R.drawable.yellowgreen) ;
+				b.setBackgroundResource(R.drawable.yellowgreen);
 
 			}
 		} else if (c1 == 4) {
 			if (c2 == 1) {
-				b.setBackgroundResource(R.drawable.redyellow) ;
+				b.setBackgroundResource(R.drawable.redyellow);
 
 			} else if (c2 == 2) {
-				b.setBackgroundResource(R.drawable.blueyellow) ;
+				b.setBackgroundResource(R.drawable.blueyellow);
 
 			} else if (c3 == 3) {
-				b.setBackgroundResource(R.drawable.yellowgreen) ;
+				b.setBackgroundResource(R.drawable.yellowgreen);
 
 			} else if (c4 == 4) {
-				b.setBackgroundResource(R.drawable.yellow) ;
+				b.setBackgroundResource(R.drawable.yellow);
 
 			}
 		}
-		
+
 	}
 
 	// =================================================================================================================================================
@@ -1440,1314 +1433,67 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 			break;
 		// =====================================================================================================================================================
 
-		// On Game button clicks
-		// =====================================================================================================================================================
-		case (R.id.Button05):
-			if (k == 6) {
-				if (A[0][0] == 2) {
-					p2power3(0, 0);
-				}
-			}
-			if (k == 5) {
-				if (A[0][0] == 1) {
-					p1power3(0, 0);
-					singleplayer();
-				}
-			} else if (k == 3) {
-				if (A[0][0] != 0) {
-					p1power2(0);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[0][0] != 0) {
-					p2power2(0);
-				} else
-					k = 0;
-			}
-
-			else if (k == 0) {
-				if (A[0][0] == 0) {
-					{
-						if (t == 'R') {
-
-							t = 'B';
-							copy();
-							A[0][0] = 1;
-							rmoves++;
-						} else {
-							copy();
-							A[0][0] = 2;
-							t = 'R';
-							bmoves++;
-						}
-						display();
-
-						singleplayer();
-					}
-				}
-			} else if (k == 1) {
-				p1power1(0, 0);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(0, 0);
-
-			}
-
-			break;
-
-		case (R.id.button1):
-			if (k == 6) {
-				if (A[0][1] == 2) {
-					p2power3(0, 1);
-				}
-			}
-			if (k == 5) {
-				if (A[0][1] == 1) {
-					p1power3(0, 1);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[0][1] != 0) {
-					p1power2(0);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[0][1] != 0) {
-					p2power2(1);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(0, 1);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(0, 1);
-
-			} else if (A[0][1] == 0) {
-				{
-					if (t == 'R') {
-						copy();
-						t = 'B';
-						rmoves++;
-
-						A[0][1] = 1;
-					} else {
-						copy();
-						A[0][1] = 2;
-						t = 'R';
-						bmoves++;
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button04):
-			if (k == 6) {
-				if (A[0][2] == 2) {
-					p2power3(0, 2);
-				}
-			}
-			if (k == 5) {
-				if (A[0][2] == 1) {
-					p1power3(0, 2);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[0][2] != 0) {
-					p1power2(0);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[0][2] != 0) {
-					p2power2(2);
-				} else
-					k = 0;
-			}
-
-			else
-
-			if (k == 1) {
-				p1power1(0, 2);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(0, 2);
-
-			} else if (A[0][2] == 0) {
-				{
-					if (t == 'R') {
-						copy();
-						t = 'B';
-						rmoves++;
-						A[0][2] = 1;
-					} else {
-						copy();
-						A[0][2] = 2;
-						t = 'R';
-						bmoves++;
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-		case (R.id.Button09):
-			if (k == 6) {
-				if (A[0][3] == 2) {
-					p2power3(0, 3);
-				}
-			}
-			if (k == 5) {
-				if (A[0][3] == 1) {
-					p1power3(0, 3);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[0][3] != 0) {
-					p1power2(0);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[0][3] != 0) {
-					p2power2(3);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(0, 3);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(0, 3);
-
-			} else if (A[0][3] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						B[0][3].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						rmoves++;
-						A[0][3] = 1;
-					} else {
-						B[0][3].setBackgroundResource(R.drawable.blue);
-						A[0][3] = 2;
-						t = 'R';
-						bmoves++;
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button10):
-			if (k == 6) {
-				if (A[0][4] == 2) {
-					p2power3(0, 4);
-				}
-			}
-			if (k == 5) {
-				if (A[0][4] == 1) {
-					p1power3(0, 4);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[0][4] != 0) {
-					p1power2(0);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[0][4] != 0) {
-					p2power2(4);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(0, 4);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(0, 4);
-			} else if (A[0][4] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						B[0][4].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[0][4] = 1;
-						rmoves++;
-					} else {
-						B[0][4].setBackgroundResource(R.drawable.blue);
-						A[0][4] = 2;
-						bmoves++;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-		case (R.id.Button03):
-			if (k == 6) {
-				if (A[1][0] == 2) {
-					p2power3(1, 0);
-				}
-			}
-			if (k == 5) {
-				if (A[1][0] == 1) {
-					p1power3(1, 0);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[1][0] != 0) {
-					p1power2(1);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[1][0] != 0) {
-					p2power2(0);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(1, 0);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(1, 0);
-
-			} else if (A[1][0] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						B[1][0].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						rmoves++;
-						A[1][0] = 1;
-					} else {
-						B[1][0].setBackgroundResource(R.drawable.blue);
-						A[1][0] = 2;
-						bmoves++;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button02):
-			if (k == 6) {
-				if (A[1][1] == 2) {
-					p2power3(1, 1);
-				}
-			}
-			if (k == 5) {
-				if (A[1][1] == 1) {
-					p1power3(1, 1);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[1][1] != 0) {
-					p1power2(1);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[1][1] != 0) {
-					p2power2(1);
-				} else
-					k = 0;
-			}
-
-			else
-
-			if (k == 1) {
-				p1power1(1, 1);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(1, 1);
-			} else if (A[1][1] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						B[1][1].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						rmoves++;
-						A[1][1] = 1;
-					} else {
-						B[1][1].setBackgroundResource(R.drawable.blue);
-						A[1][1] = 2;
-						bmoves++;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button01):
-			if (k == 6) {
-				if (A[1][2] == 2) {
-					p2power3(1, 2);
-				}
-			}
-			if (k == 5) {
-				if (A[1][2] == 1) {
-					p1power3(1, 2);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[1][2] != 0) {
-					p1power2(1);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[1][2] != 0) {
-					p2power2(2);
-				} else
-					k = 0;
-			}
-
-			else
-
-			if (k == 1) {
-				p1power1(1, 2);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(1, 2);
-
-			} else if (A[1][2] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						B[1][2].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						rmoves++;
-						A[1][2] = 1;
-					} else {
-						B[1][2].setBackgroundResource(R.drawable.blue);
-						A[1][2] = 2;
-						bmoves++;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-		case (R.id.Button11):
-			if (k == 6) {
-				if (A[1][3] == 2) {
-					p2power3(1, 3);
-				}
-			}
-			if (k == 5) {
-				if (A[1][3] == 1) {
-					p1power3(1, 3);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[1][3] != 0) {
-					p1power2(1);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[1][3] != 0) {
-					p2power2(3);
-				} else
-					k = 0;
-			}
-
-			else
-
-			if (k == 1) {
-				p1power1(1, 3);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(1, 3);
-
-			} else if (A[1][3] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[1][3].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[1][3] = 1;
-					} else {
-						bmoves++;
-						B[1][3].setBackgroundResource(R.drawable.blue);
-						A[1][3] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button13):
-			if (k == 6) {
-				if (A[1][4] == 2) {
-					p2power3(1, 4);
-				}
-			}
-			if (k == 5) {
-				if (A[1][4] == 1) {
-					p1power3(1, 4);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[1][4] != 0) {
-					p1power2(1);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[1][4] != 0) {
-					p2power2(4);
-				} else
-					k = 0;
-			}
-
-			else
-
-			if (k == 1) {
-				p1power1(1, 4);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(1, 4);
-
-			} else if (A[1][4] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[1][4].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[1][4] = 1;
-					} else {
-						bmoves++;
-						B[1][4].setBackgroundResource(R.drawable.blue);
-						A[1][4] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button06):
-			if (k == 6) {
-				if (A[2][0] == 2) {
-					p2power3(2, 0);
-				}
-			}
-			if (k == 5) {
-				if (A[2][0] == 1) {
-					p1power3(2, 0);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[2][0] != 0) {
-					p1power2(2);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[2][0] != 0) {
-					p2power2(0);
-				} else
-					k = 0;
-			}
-
-			else
-
-			if (k == 1) {
-				p1power1(2, 0);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(2, 0);
-
-			} else if (A[2][0] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[2][0].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[2][0] = 1;
-					} else {
-						bmoves++;
-						B[2][0].setBackgroundResource(R.drawable.blue);
-						A[2][0] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button07):
-			if (k == 6) {
-				if (A[2][1] == 2) {
-					p2power3(2, 1);
-				}
-			}
-			if (k == 5) {
-				if (A[2][1] == 1) {
-					p1power3(2, 1);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[2][1] != 0) {
-					p1power2(2);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[2][1] != 0) {
-					p2power2(1);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(2, 1);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(2, 1);
-
-			} else if (A[2][1] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[2][1].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[2][1] = 1;
-					} else {
-						bmoves++;
-						B[2][1].setBackgroundResource(R.drawable.blue);
-						A[2][1] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button08):
-			if (k == 6) {
-				if (A[2][2] == 2) {
-					p2power3(2, 2);
-				}
-			}
-			if (k == 5) {
-				if (A[2][2] == 1) {
-					p1power3(2, 2);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[2][2] != 0) {
-					p1power2(2);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[2][2] != 0) {
-					p2power2(2);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(2, 2);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(2, 2);
-
-			} else if (A[2][2] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[2][2].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[2][2] = 1;
-					} else {
-						bmoves++;
-						B[2][2].setBackgroundResource(R.drawable.blue);
-						A[2][2] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-		case (R.id.Button12):
-			if (k == 6) {
-				if (A[2][3] == 2) {
-					p2power3(2, 3);
-				}
-			}
-			if (k == 5) {
-				if (A[2][3] == 1) {
-					p1power3(2, 3);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[2][3] != 0) {
-					p1power2(2);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[2][3] != 0) {
-					p2power2(3);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(2, 3);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(2, 3);
-
-			} else if (A[2][3] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[2][3].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[2][3] = 1;
-					} else {
-						bmoves++;
-						B[2][3].setBackgroundResource(R.drawable.blue);
-						A[2][3] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button17):
-			if (k == 6) {
-				if (A[2][4] == 2) {
-					p2power3(2, 4);
-				}
-			}
-			if (k == 5) {
-				if (A[2][4] == 1) {
-					p1power3(2, 4);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[2][4] != 0) {
-					p1power2(2);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[2][4] != 0) {
-					p2power2(4);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(2, 4);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(2, 4);
-
-			} else if (A[2][4] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[2][4].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[2][4] = 1;
-					} else {
-						bmoves++;
-						B[2][4].setBackgroundResource(R.drawable.blue);
-						A[2][4] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-		case (R.id.Button19):
-			if (k == 6) {
-				if (A[3][0] == 2) {
-					p2power3(3, 0);
-				}
-			}
-			if (k == 5) {
-				if (A[3][0] == 1) {
-					p1power3(3, 0);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[3][0] != 0) {
-					p1power2(3);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[3][0] != 0) {
-					p2power2(0);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(3, 0);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(3, 0);
-
-			} else if (A[3][0] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[3][0].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[3][0] = 1;
-					} else {
-						bmoves++;
-						B[3][0].setBackgroundResource(R.drawable.blue);
-						A[3][0] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button14):
-			if (k == 6) {
-				if (A[3][1] == 2) {
-					p2power3(3, 1);
-				}
-			}
-			if (k == 5) {
-				if (A[3][1] == 1) {
-					p1power3(3, 1);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[3][1] != 0) {
-					p1power2(3);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[3][1] != 0) {
-					p2power2(1);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(3, 1);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(3, 1);
-
-			} else if (A[3][1] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[3][1].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[3][1] = 1;
-					} else {
-						bmoves++;
-						B[3][1].setBackgroundResource(R.drawable.blue);
-						A[3][1] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button16):
-			if (k == 6) {
-				if (A[3][2] == 2) {
-					p2power3(3, 2);
-				}
-			}
-			if (k == 5) {
-				if (A[3][2] == 1) {
-					p1power3(3, 2);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[3][2] != 0) {
-					p1power2(3);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[3][2] != 0) {
-					p2power2(2);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(3, 2);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(3, 2);
-
-			} else if (A[3][2] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[3][2].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[3][2] = 1;
-					} else {
-						bmoves++;
-						B[3][2].setBackgroundResource(R.drawable.blue);
-						A[3][2] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-		case (R.id.Button18):
-			if (k == 6) {
-				if (A[3][3] == 2) {
-					p2power3(3, 3);
-				}
-			}
-			if (k == 5) {
-				if (A[3][3] == 1) {
-					p1power3(3, 3);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[3][3] != 0) {
-					p1power2(3);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[3][3] != 0) {
-					p2power2(3);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(3, 3);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(3, 3);
-
-			} else if (A[3][3] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[3][3].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[3][3] = 1;
-					} else {
-						bmoves++;
-						B[3][3].setBackgroundResource(R.drawable.blue);
-						A[3][3] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button15):
-			if (k == 6) {
-				if (A[3][4] == 2) {
-					p2power3(3, 4);
-				}
-			}
-			if (k == 5) {
-				if (A[3][4] == 1) {
-					p1power3(3, 4);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[3][4] != 0) {
-					p1power2(3);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[3][4] != 0) {
-					p2power2(4);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(3, 4);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(3, 4);
-
-			} else if (A[3][4] == 0) {
-				{
-					copy();
-
-					if (t == 'R') {
-						rmoves++;
-						B[3][4].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[3][4] = 1;
-					} else {
-						bmoves++;
-						B[3][4].setBackgroundResource(R.drawable.blue);
-						A[3][4] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-		case (R.id.Button24):
-			if (k == 6) {
-				if (A[4][0] == 2) {
-					p2power3(4, 0);
-				}
-			}
-			if (k == 5) {
-				if (A[4][0] == 1) {
-					p1power3(4, 0);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[4][0] != 0) {
-					p1power2(4);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[4][0] != 0) {
-					p2power2(0);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(4, 0);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(4, 0);
-
-			} else if (A[4][0] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[4][0].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[4][0] = 1;
-					} else {
-						bmoves++;
-						B[4][0].setBackgroundResource(R.drawable.blue);
-						A[4][0] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button20):
-			if (k == 6) {
-				if (A[4][1] == 2) {
-					p2power3(4, 1);
-				}
-			}
-			if (k == 5) {
-				if (A[4][1] == 1) {
-					p1power3(4, 1);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[4][1] != 0) {
-					p1power2(4);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[4][1] != 0) {
-					p2power2(1);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(4, 1);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(4, 1);
-
-			} else if (A[4][1] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[4][1].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[4][1] = 1;
-					} else {
-						bmoves++;
-						B[4][1].setBackgroundResource(R.drawable.blue);
-						A[4][1] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button22):
-			if (k == 6) {
-				if (A[4][2] == 2) {
-					p2power3(4, 2);
-				}
-			}
-			if (k == 5) {
-				if (A[4][2] == 1) {
-					p1power3(4, 2);
-					singleplayer();
-				}
-			}
-			if (k == 1) {
-				p1power1(4, 2);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(4, 2);
-
-			} else if (k == 3) {
-				if (A[4][2] != 0) {
-					p1power2(4);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[4][2] != 0) {
-					p2power2(2);
-				} else
-					k = 0;
-			}
-
-			else if (A[4][2] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[4][2].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[4][2] = 1;
-					} else {
-						bmoves++;
-						B[4][2].setBackgroundResource(R.drawable.blue);
-						A[4][2] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-		case (R.id.Button23):
-			if (k == 6) {
-				if (A[4][3] == 2) {
-					p2power3(4, 3);
-				}
-			}
-			if (k == 5) {
-				if (A[4][3] == 1) {
-					p1power3(4, 3);
-					singleplayer();
-				}
-			}
-			if (k == 1) {
-				p1power1(4, 3);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(4, 3);
-
-			} else if (k == 3) {
-				if (A[4][3] != 0) {
-					p1power2(4);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[4][3] != 0) {
-					p2power2(3);
-				} else
-					k = 0;
-			}
-
-			else if (A[4][3] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[4][3].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[4][3] = 1;
-					} else {
-						bmoves++;
-						B[4][3].setBackgroundResource(R.drawable.blue);
-						A[4][3] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
-		case (R.id.Button21):
-			if (k == 6) {
-				if (A[4][4] == 2) {
-					p2power3(4, 4);
-				}
-			}
-			if (k == 5) {
-				if (A[4][4] == 1) {
-					p1power3(4, 4);
-					singleplayer();
-				}
-			}
-			if (k == 3) {
-				if (A[4][4] != 0) {
-					p1power2(4);
-					singleplayer();
-				} else
-					k = 0;
-			} else if (k == 4) {
-				if (A[4][4] != 0) {
-					p2power2(4);
-				} else
-					k = 0;
-			}
-
-			else if (k == 1) {
-				p1power1(4, 4);
-				singleplayer();
-			} else if (k == 2) {
-				p2power1(4, 4);
-
-			} else if (A[4][4] == 0) {
-				{
-					copy();
-					if (t == 'R') {
-						rmoves++;
-						B[4][4].setBackgroundResource(R.drawable.red);
-						t = 'B';
-						A[4][4] = 1;
-					} else {
-						bmoves++;
-						B[4][4].setBackgroundResource(R.drawable.blue);
-						A[4][4] = 2;
-						t = 'R';
-					}
-					display();
-					singleplayer();
-				}
-
-			}
-			break;
-
 		// TODO Auto-generated method stub
 
+		}
+		// On Game button clicks
+		// =====================================================================================================================================================
+
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (B[i][j].getId() == arg0.getId()) {
+
+					if (k == 6) {
+						if (A[i][j] == 2) {
+							p2power3(i, j);
+						}
+					}
+					if (k == 5) {
+						if (A[i][j] == 1) {
+							p1power3(i, j);
+							singleplayer();
+						}
+					}
+					if (k == 1) {
+						p1power1(i, j);
+						singleplayer();
+					} else if (k == 2) {
+						p2power1(i, j);
+
+					} else if (k == 3) {
+						if (A[i][j] != 0) {
+							p1power2(i);
+							singleplayer();
+						} else
+							k = 0;
+					} else if (k == 4) {
+						if (A[i][j] != 0) {
+							p2power2(j);
+						} else
+							k = 0;
+					}
+
+					else if (A[i][j] == 0) {
+						{
+							copy();
+							if (t == 'R') {
+								rmoves++;
+								B[i][j].setBackgroundResource(R.drawable.red);
+								t = 'B';
+								A[i][j] = 1;
+							} else {
+								bmoves++;
+								B[i][j].setBackgroundResource(R.drawable.blue);
+								A[i][j] = 2;
+								t = 'R';
+							}
+							display();
+							singleplayer();
+						}
+
+					}
+				}
+			}
 		}
 
 	}
