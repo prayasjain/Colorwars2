@@ -15,9 +15,14 @@
     <string name="Moves">Moves Limit</string>
     <string name="BallColor">Color</string>
     <string name="GameMode">Game Mode:</string>
-     <string name="Left">Left</string>
+    <string name="Left">Left</string>
     <string name="Bottom">Bottom</string>
     <string name="Top">Top</string>
     <string name="Right">Right</string>
+    <string name="transition"><u>Intermediate Colours</u></string>
+    <string name="botdiff"><u>Bot Levels</u></string>
+    <string name="anim"><u>Animations</u></string>
+    <string name="modes"><u>More Modes</u></string>
+    <string name="htw1">To <u>Win The War</u> ,you can </string>
 
 </resources>

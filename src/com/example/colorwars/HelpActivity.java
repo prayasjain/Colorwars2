@@ -112,7 +112,7 @@ public class HelpActivity extends Activity implements OnClickListener {
 						e.printStackTrace();
 					} finally {
 						Intent About = new Intent(context,
-								Temp.class);
+								HTwin.class);
 						startActivity(About);
 					}
 				}
@@ -131,7 +131,7 @@ public class HelpActivity extends Activity implements OnClickListener {
 						e.printStackTrace();
 					} finally {
 						Intent About = new Intent(context,
-								Temp.class);
+								CSoon.class);
 						startActivity(About);
 					}
 				}

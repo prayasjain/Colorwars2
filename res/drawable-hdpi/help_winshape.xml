@@ -5,12 +5,12 @@
     <corners android:radius="15dp" />
 
     <gradient
-        android:centerColor="#880015"
+        android:centerColor="@color/maroon"
         android:centerX="48%"
         android:centerY="50%"
-        android:endColor="#880015"
+        android:endColor="@color/maroon"
         android:gradientRadius="100"
-        android:startColor="#880015"
+        android:startColor="@color/maroon"
         android:type="radial" />
 
     <padding
