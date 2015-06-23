@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <TextView
+        android:id="@+id/tvhtw"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="45"
+        android:background="@drawable/llmaincolor"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="How To Win"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/llmaroon"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="10"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvhtwh1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            
+            android:text="@string/htw1"
+            android:textColor="#FFF"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tvhtw1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="Eliminate all the enemy\nballs...."
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvhtwh2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="15dp"
+            android:text="OR"
+            android:textColor="#FFF"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tvhtw2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="Have more number of balls \nthan the opponent if the arena \nfills up !!"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+       
+
+       
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="45"
+        android:background="@drawable/llmaincolor"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <Button
+            android:id="@+id/bhtwprev"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bhtwin"
+            android:text="Previous" />
+
+        <Button
+            android:id="@+id/bhtwexit"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bhtwin"
+            android:text="Exit" />
+
+        <Button
+            android:id="@+id/bhtwnext"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bhtrwin"
+            android:text="Next" />
+    </LinearLayout>
+
+</LinearLayout>

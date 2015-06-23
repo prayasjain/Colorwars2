@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <TextView
+        android:id="@+id/tvcsoon"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="45"
+        android:background="@drawable/llmaincolor"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="Coming Soon"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/llorange"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="10"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvcsh1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="15dp"
+            android:text="@string/transition"
+            android:textColor="#FFF"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tvcs1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="Intermediate Colours when a ball is captured"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvcsh2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="15dp"
+            android:text="@string/botdiff"
+            android:textColor="#FFF"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tvcs2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="Various Levels of Difficulty against the bots"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvcsh3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="15dp"
+            android:text="@string/anim"
+            android:textColor="#FFF"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tvcs3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="Animations and more interactive UI/UX"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvcsh4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="15dp"
+            android:text="@string/modes"
+            android:textColor="#FFF"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tvcs4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="More modes(arcade,campaign..)"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="45"
+        android:background="@drawable/llmaincolor"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <Button
+            android:id="@+id/bcsprev"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bcsoon"
+            android:text="Previous" />
+
+        <Button
+            android:id="@+id/bcsexit"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bcsoon"
+            android:text="Exit" />
+
+        <Button
+            android:id="@+id/bcsnext"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bcrsoon"
+            android:text="Next" />
+    </LinearLayout>
+
+</LinearLayout>

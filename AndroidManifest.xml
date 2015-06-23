@@ -58,7 +58,23 @@
     	android:configChanges="keyboardHidden|orientation|screenSize">
             
         </activity>
+         <activity android:name=".Temp"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.Dialog"
+    	android:configChanges="keyboardHidden|orientation|screenSize">
+            
+        </activity>
+        <activity android:name=".HTwin"
+             android:screenOrientation="portrait"
+    	android:configChanges="keyboardHidden|orientation|screenSize">
+            
+        </activity>
         <activity android:name=".HelpActivity"
+             android:screenOrientation="portrait"
+    	android:configChanges="keyboardHidden|orientation|screenSize">
+            
+        </activity>
+        <activity android:name=".CSoon"
              android:screenOrientation="portrait"
     	android:configChanges="keyboardHidden|orientation|screenSize">
             
