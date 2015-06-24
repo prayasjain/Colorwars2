@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <TextView
+        android:id="@+id/tvcsoon"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="45"
+        android:background="@drawable/llmaincolor"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="Power Ups"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/llblue"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="10"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvhtwh1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            
+            android:text="You gain as many points as the number of enemy balls we hit during a swipe. You may use those points to buy special weapons or powerups"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvhtw1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="There are 3 powerups at your disposal-"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvhtwh2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="18dp"
+            android:paddingLeft='15dp'
+            android:text="Power up 1 changes one enemy ball chosen by us into our ball(using 5 of your points)"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+
+       
+
+       
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="45"
+        android:background="@drawable/llmaincolor"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <Button
+            android:id="@+id/bhtwprev"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bpups"
+            android:text="Previous" />
+
+        <Button
+            android:id="@+id/bhtwexit"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bpups"
+            android:text="Exit" />
+
+        <Button
+            android:id="@+id/bhtwnext"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bprups"
+            android:text="Next" />
+    </LinearLayout>
+
+</LinearLayout>
