@@ -11,11 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_weight="45"
+        android:drawableLeft="@drawable/ic_launcher2"
         android:background="@drawable/llmaincolor"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:text="Coming Soon"
-        android:textSize="22sp" />
+        android:textSize="52sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,6 +56,8 @@
             android:text="@string/botdiff"
             android:textColor="#FFF"
             android:textSize="22sp" />
+
+      
 
         <TextView
             android:id="@+id/tvcs2"

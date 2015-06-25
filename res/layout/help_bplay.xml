@@ -2,95 +2,138 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
     android:orientation="vertical"
     android:weightSum="100" >
 
     <TextView
-        android:id="@+id/tvhtw"
+        android:id="@+id/tvbph"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_weight="45"
         android:background="@drawable/llmaincolor"
+        android:drawableLeft="@drawable/ic_launcher2"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:text="Basic Play"
-        android:textSize="22sp" />
+        android:textSize="52sp" />
 
-    <LinearLayout
+    <ViewFlipper
+        android:id="@+id/flips"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:background="@drawable/llpurple"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="10"
-        android:gravity="center_vertical"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/tvcs1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingTop="15dp"
-            android:paddingLeft="15dp"
-            android:text="First,choose a coloured ball as your avatar to go for a logical war against the other player!"
-            android:textColor="#FFF"
-            android:textSize="18sp" />
+        android:layout_weight="10" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/llpurple"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/red"
+            <TextView
+                android:id="@+id/tvbp1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="40dp"
-                android:background="@drawable/red" />
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:text="First,choose a coloured ball as your avatar to go for a logical war against the other player!"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/blue"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="50dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/blue" />
+                android:layout_weight="10"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
 
+                <Button
+                    android:id="@+id/red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/red" />
+
+                <Button
+                    android:id="@+id/blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="50dp"
+                    android:background="@drawable/blue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/green" />
+
+                <Button
+                    android:id="@+id/yellow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="50dp"
+                    android:background="@drawable/yellow" />
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout 
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-        	android:layout_gravity="center_vertical"
-        	android:layout_weight="10"
-        	
-        	android:gravity="center_vertical"
-        	android:orientation="horizontal">
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/llpurple"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/green"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-              android:layout_marginLeft="50dp"
-                android:layout_marginRight="40dp"
-            android:background="@drawable/green" />
-         <Button
-            android:id="@+id/yellow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             android:layout_marginLeft="40dp"
-                android:layout_marginRight="50dp"
-            android:background="@drawable/yellow" />
-            
+            <TextView
+                android:id="@+id/tvbp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:text="In the game arena, you can either-"
+                android:textColor="#FFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tvbp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="      i) Click any cell to capture that cell with your colour/ball/avatar. OR"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvbp4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="      ii) Select the left/right button (for player 1) or the up/down button(for player 2) or swipe in that desired direction to move ALL balls in that direction. This causes all the enemy balls encountered (virtually  hit by your balls sweeping acroos)to convert into your balls!"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
         </LinearLayout>
-       
-    </LinearLayout>
+    </ViewFlipper>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,7 +144,7 @@
         android:weightSum="3" >
 
         <Button
-            android:id="@+id/bhtwprev"
+            android:id="@+id/bbplayprev"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
@@ -109,7 +152,7 @@
             android:text="Previous" />
 
         <Button
-            android:id="@+id/bhtwexit"
+            android:id="@+id/bbplayexit"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
@@ -117,7 +160,7 @@
             android:text="Exit" />
 
         <Button
-            android:id="@+id/bhtwnext"
+            android:id="@+id/bbplaynext"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"

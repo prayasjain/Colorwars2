@@ -40,6 +40,11 @@ public class CSoon extends Activity implements android.view.View.OnClickListener
 		t[7] = (TextView)findViewById(R.id.tvcsh4) ;
 		h =(TextView)findViewById(R.id.tvcsoon);
 		h.setTypeface(fontbd) ;
+		float sts= h.getTextSize() ;
+		h.setTextSize(sts/(getResources().getDisplayMetrics().density*2)) ;
+		
+		
+		
 		for(int i =0 ;i<8;i++){
 			t[i].setTypeface(font);
 		}
@@ -49,6 +54,9 @@ public class CSoon extends Activity implements android.view.View.OnClickListener
 		next.setTypeface(font);
 		prev.setTypeface(font);
 		exit.setTypeface(font);
+		next.setOnClickListener(this) ;
+		prev.setOnClickListener(this);
+		exit.setOnClickListener(this);
 	}
 
 	@Override
@@ -56,13 +64,13 @@ public class CSoon extends Activity implements android.view.View.OnClickListener
 		// TODO Auto-generated method stub
 		switch(v.getId()){
 		case R.id.bcsnext :
-			Intent r = new Intent(context,Temp.class) ;
+			Intent r = new Intent(context,BPlay.class) ;
 			startActivity(r) ;
 			
 			break ;
 			
 		case R.id.bcsprev :
-			Intent r2 = new Intent(context,Temp.class) ;
+			Intent r2 = new Intent(context,HTwin.class) ;
 			startActivity(r2) ;
 			
 			break ;
@@ -70,14 +78,19 @@ public class CSoon extends Activity implements android.view.View.OnClickListener
 			
 		case R.id.bcsexit :
 			
-			Intent r3 = new Intent(context,Temp.class) ;
+			Intent r3 = new Intent(context,HelpActivity.class) ;
 			startActivity(r3) ;
 			
 			break ;
 			
 		}
 	}
-
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish() ;
+	}
 	
 
 }

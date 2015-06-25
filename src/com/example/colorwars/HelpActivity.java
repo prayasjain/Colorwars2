@@ -74,7 +74,7 @@ public class HelpActivity extends Activity implements OnClickListener {
 						e.printStackTrace();
 					} finally {
 						Intent About = new Intent(context,
-								Temp.class);
+								BPlay.class);
 						startActivity(About);
 					}
 				}
@@ -93,7 +93,7 @@ public class HelpActivity extends Activity implements OnClickListener {
 						e.printStackTrace();
 					} finally {
 						Intent About = new Intent(context,
-								Temp.class);
+								PUps.class);
 						startActivity(About);
 					}
 				}
@@ -189,5 +189,11 @@ public class HelpActivity extends Activity implements OnClickListener {
 			}
 		}
 		tdiff=SystemClock.currentThreadTimeMillis()-time ;
+	}
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish() ;
 	}
 }

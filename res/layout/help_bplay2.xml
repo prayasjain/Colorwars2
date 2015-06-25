@@ -7,7 +7,7 @@
     android:weightSum="100" >
 
     <TextView
-        android:id="@+id/tvcsoon"
+        android:id="@+id/tvbph"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_weight="45"
@@ -15,7 +15,7 @@
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:text="Basic Play"
-        android:textSize="22sp" />
+        android:textSize="52sp" />
 
    <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/tvcsh1"
+            android:id="@+id/tvbp2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -39,7 +39,7 @@
             android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/tvcs1"
+            android:id="@+id/tvbp3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
@@ -49,7 +49,7 @@
             android:textColor="#FFF"
             android:textSize="18sp" />
 		<TextView
-            android:id="@+id/tvcs2"
+            android:id="@+id/tvbp4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"

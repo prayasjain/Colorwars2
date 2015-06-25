@@ -36,6 +36,8 @@ public class HTwin extends Activity implements OnClickListener {
 		
 		h =(TextView)findViewById(R.id.tvhtw);
 		h.setTypeface(fontbd) ;
+		float sts= h.getTextSize() ;
+		h.setTextSize(sts/(getResources().getDisplayMetrics().density*2)) ;
 		for(int i =0 ;i<4;i++){
 			t[i].setTypeface(font);
 		}
@@ -45,6 +47,9 @@ public class HTwin extends Activity implements OnClickListener {
 		next.setTypeface(font);
 		prev.setTypeface(font);
 		exit.setTypeface(font);
+		next.setOnClickListener(this) ;
+		prev.setOnClickListener(this);
+		exit.setOnClickListener(this);
 	}
 
 	@Override
@@ -52,13 +57,13 @@ public class HTwin extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		switch(v.getId()){
 		case R.id.bhtwnext :
-			Intent r = new Intent(context,Temp.class) ;
+			Intent r = new Intent(context,CSoon.class) ;
 			startActivity(r) ;
 			
 			break ;
 			
 		case R.id.bhtwprev :
-			Intent r2 = new Intent(context,Temp.class) ;
+			Intent r2 = new Intent(context,PUps.class) ;
 			startActivity(r2) ;
 			
 			break ;
@@ -66,11 +71,17 @@ public class HTwin extends Activity implements OnClickListener {
 			
 		case R.id.bhtwexit :
 			
-			Intent r3 = new Intent(context,Temp.class) ;
+			Intent r3 = new Intent(context,HelpActivity.class) ;
 			startActivity(r3) ;
 			
 			break ;
 			
 		}
+	}
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish() ;
 	}
 }
