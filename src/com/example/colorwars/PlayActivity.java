@@ -415,7 +415,11 @@ public class PlayActivity extends Activity implements OnClickListener,
 		B[4][2].setOnClickListener(this);
 		B[4][3].setOnClickListener(this);
 		B[4][4].setOnClickListener(this);
-
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				B[i][j].setOnTouchListener(this);
+			}
+		}
 		Left.setOnClickListener(this);
 		Right.setOnClickListener(this);
 		Top.setOnClickListener(this);
@@ -913,6 +917,13 @@ public class PlayActivity extends Activity implements OnClickListener,
 	@Override
 	public boolean onTouch(View v, MotionEvent arg1) {
 		// TODO Auto-generated method stub
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}// TODO Auto-generated method stub
+
 		TextView debug = (TextView) findViewById(R.id.tvdebug2);
 
 		switch (arg1.getAction()) {
@@ -936,60 +947,72 @@ public class PlayActivity extends Activity implements OnClickListener,
 			int sty = (int) sy;
 			int finy = (int) fy;
 			int diff = finx - stx;
+			int diff2 = finy - sty;
+			if (Math.abs(diff2) > Math.abs(diff)) {
+				diff = diff2;
+			}
+			if (Math.abs(diff) < 20) {
+				for (int i = 0; i < 5; i++) {
+					for (int j = 0; j < 5; j++) {
+						if (B[i][j].getId() == v.getId()) {
 
-			if (finx != 0 || finy != 0) {
+							if (k == 6) {
+								if (A[i][j] == 2) {
+									p2power3(i, j);
+								}
+							}
+							if (k == 5) {
+								if (A[i][j] == 1) {
+									p1power3(i, j);
+								}
+							}
+							if (k == 3) {
+								if (A[i][j] != 0) {
+									p1power2(i);
+								} else
+									k = 0;
+							} else if (k == 4) {
+								if (A[i][j] != 0) {
+									p2power2(j);
+								} else
+									k = 0;
+							}
 
-				if (t == 'R') {
+							else if (k == 1) {
+								p1power1(i, j);
+							} else if (k == 2) {
+								p2power1(i, j);
 
-					debug.setText("st" + stx + "fin" + finx + "diff" + diff);
+							} else if (A[i][j] == 0) {
+								{
+									copy();
+									if (t == 'R') {
+										rmoves++;
+										B[i][j].setBackgroundResource(R.drawable.red);
+										t = 'B';
+										A[i][j] = 1;
+									} else {
+										bmoves++;
+										B[i][j].setBackgroundResource(R.drawable.blue);
+										A[i][j] = 2;
+										t = 'R';
+									}
+									display();
+								}
 
-					for (i = 0; i < 5; i++) {
-						for (j = 0; j < 5; j++)
-							mid[i][j] = A[i][j];
-					}
-					brmoves = rmoves;
-					bbmoves = bmoves;
-					btotscore = totscore;
-					btotscore1 = totscore1;
-					movedown();
-					if (checkarr() != 0) {
-						for (i = 0; i < 5; i++) {
-							for (j = 0; j < 5; j++)
-								b[i][j] = mid[i][j];
+							}
 						}
-						ubmoves = bbmoves;
-						urmoves = brmoves;
-						utotscore = btotscore;
-						utotscore1 = btotscore1;
-						bmoves++;
-						t = 'R';
-
 					}
+				}
+				return false;
+			}
+			if (t == 'R') {
+				int diffx = finx - stx;
+				if (Math.abs(diffx) < 20) {
+					return false;
+				} else {
 
-					for (i = 0; i < 5; i++) {
-						for (j = 0; j < 5; j++)
-							mid[i][j] = A[i][j];
-					}
-					brmoves = rmoves;
-					bbmoves = bmoves;
-					btotscore = totscore;
-					btotscore1 = totscore1;
-					movedown();
-					if (checkarr() != 0) {
-						for (i = 0; i < 5; i++) {
-							for (j = 0; j < 5; j++)
-								b[i][j] = mid[i][j];
-						}
-						ubmoves = bbmoves;
-						urmoves = brmoves;
-						utotscore = btotscore;
-						utotscore1 = btotscore1;
-						bmoves++;
-						t = 'R';
-
-					}
-
-					if (finx > stx) {
+					if (diffx > 0) {
 						for (i = 0; i < 5; i++) {
 							for (j = 0; j < 5; j++)
 								mid[i][j] = A[i][j];
@@ -1011,7 +1034,11 @@ public class PlayActivity extends Activity implements OnClickListener,
 							t = 'B';
 							rmoves++;
 						}
+						if (checkchange() != 0) {
+
+						}
 						display();
+
 					} else {
 						for (i = 0; i < 5; i++) {
 							for (j = 0; j < 5; j++)
@@ -1034,36 +1061,21 @@ public class PlayActivity extends Activity implements OnClickListener,
 							t = 'B';
 							rmoves++;
 						}
-						display();
-					}
-				} else {
-					diff = finy - sty;
-					debug.setText("st" + sty + "fin" + finy + "diff" + diff);
-					if (finy < sty) {
-						for (i = 0; i < 5; i++) {
-							for (j = 0; j < 5; j++)
-								mid[i][j] = A[i][j];
-						}
-						brmoves = rmoves;
-						bbmoves = bmoves;
-						btotscore = totscore;
-						btotscore1 = totscore1;
-						moveup();
-						if (checkarr() != 0) {
-							for (i = 0; i < 5; i++) {
-								for (j = 0; j < 5; j++)
-									b[i][j] = mid[i][j];
-							}
-							ubmoves = bbmoves;
-							urmoves = brmoves;
-							utotscore = btotscore;
-							utotscore1 = btotscore1;
-							bmoves++;
-							t = 'R';
-						}
+						if (checkchange() != 0) {
 
+						}
 						display();
-					} else {
+
+					}
+				}
+
+			} else if (t == 'B') {
+				int diffy = finy - sty;
+				if (Math.abs(diffy) < 20) {
+					return false;
+				} else {
+					if (diffy > 0) {
+
 						for (i = 0; i < 5; i++) {
 							for (j = 0; j < 5; j++)
 								mid[i][j] = A[i][j];
@@ -1088,10 +1100,36 @@ public class PlayActivity extends Activity implements OnClickListener,
 						}
 
 						display();
+
+					} else {
+
+						for (i = 0; i < 5; i++) {
+							for (j = 0; j < 5; j++)
+								mid[i][j] = A[i][j];
+						}
+						brmoves = rmoves;
+						bbmoves = bmoves;
+						btotscore = totscore;
+						btotscore1 = totscore1;
+						moveup();
+						if (checkarr() != 0) {
+							for (i = 0; i < 5; i++) {
+								for (j = 0; j < 5; j++)
+									b[i][j] = mid[i][j];
+							}
+							ubmoves = bbmoves;
+							urmoves = brmoves;
+							utotscore = btotscore;
+							utotscore1 = btotscore1;
+							bmoves++;
+							t = 'R';
+						}
+
+						display();
+
 					}
 				}
 			}
-
 			// ////////////////////////////////////////////////////////////////////
 			sx = 0;
 			fx = 0;

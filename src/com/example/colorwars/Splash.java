@@ -4,6 +4,7 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -40,6 +41,22 @@ public class Splash extends Activity implements OnTouchListener {
 		yellow = BitmapFactory.decodeResource(getResources(),
 				R.drawable.yellowsplash);
 		setContentView(ourSurfaceView);
+		Thread timer = new Thread(){
+			public void run(){
+				try {
+					sleep(2000) ;
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}finally{
+					Intent i = new Intent(Splash.this,MainActivity.class) ;
+					startActivity(i);
+				}
+				
+				
+			}
+		};
+		timer.start();
 	}
 
 	@Override

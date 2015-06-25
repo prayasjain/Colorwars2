@@ -16,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import android.widget.TextView;
 
@@ -27,7 +28,7 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 	 * Color Mappings : 1- red 2- blue 3- green 4- yellow
 	 */
 	ArrayList<Integer> transi, transj;
-	float sx = 0, fx = 0;
+	float sx = 0, fx = 0,sy=0,fy=0;
 
 	public Button Left, Right, Top, Bottom, rpower1, rpower2, rpower3, bpower1,
 			bpower2, bpower3, undo, set, over;
@@ -868,6 +869,11 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 		B[4][2].setOnClickListener(this);
 		B[4][3].setOnClickListener(this);
 		B[4][4].setOnClickListener(this);
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				B[i][j].setOnTouchListener(this);
+			}
+		}
 
 		Left.setOnClickListener(this);
 		Right.setOnClickListener(this);
@@ -1500,7 +1506,15 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 
 	@Override
 	public boolean onTouch(View arg0, MotionEvent arg1) {
-		// TODO Auto-generated method stub
+		
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}// TODO Auto-generated method stub
+		
+
 		transi.clear();
 		transj.clear();
 		TextView debug = (TextView) findViewById(R.id.tvdebug);
@@ -1509,22 +1523,89 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 
 		case MotionEvent.ACTION_DOWN:
 			sx = arg1.getX();
+			sy=arg1.getY();
 			String y = Float.toString(sx);
 
 			debug.setText("in" + y);
-			break;
+			return true;
 
 		case MotionEvent.ACTION_UP:
 			fx = arg1.getX();
-
+			fy=arg1.getY();
 			String x = Float.toString(fx);
 
 			// /////////////////////////////////////////////////////////////
 
 			int st = (int) sx;
 			int fin = (int) fx;
+			int sty = (int)sy;
+			int finy = (int) fy ;
 			int diff = fin - st;
+			int diff2 = finy-sty ;
+			if(Math.abs(diff)<Math.abs(diff2)){
+				return false ;
+			}
 			debug.setText("st" + st + "fin" + fin + "diff" + diff);
+			if (Math.abs(diff) < 20) {
+				for (i = 0; i < 5; i++) {
+					for (j = 0; j < 5; j++) {
+						if (arg0.getId() == B[i][j].getId()) {
+							if (k == 6) {
+								if (A[i][j] == 2) {
+									p2power3(i, j);
+								}
+							}
+							if (k == 5) {
+								if (A[i][j] == 1) {
+									p1power3(i, j);
+									singleplayer();
+								}
+							}
+							if (k == 1) {
+								p1power1(i, j);
+								singleplayer();
+							} else if (k == 2) {
+								p2power1(i, j);
+
+							} else if (k == 3) {
+								if (A[i][j] != 0) {
+									p1power2(i);
+									singleplayer();
+								} else
+									k = 0;
+							} else if (k == 4) {
+								if (A[i][j] != 0) {
+									p2power2(j);
+								} else
+									k = 0;
+							}
+
+							else if (A[i][j] == 0) {
+								{
+									copy();
+									if (t == 'R') {
+										rmoves++;
+										B[i][j].setBackgroundResource(R.drawable.red);
+										t = 'B';
+										A[i][j] = 1;
+									} else {
+										bmoves++;
+										B[i][j].setBackgroundResource(R.drawable.blue);
+										A[i][j] = 2;
+										t = 'R';
+									}
+									display();
+									singleplayer();
+								}
+
+							}
+							Toast.makeText(getApplicationContext(),
+									i + " " + j, Toast.LENGTH_SHORT).show();
+						}
+					}
+				}
+				return false;
+			}
 			if (fin != 0) {
 
 				if (fin > st) {
@@ -1578,6 +1659,7 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 					}
 
 					display();
+
 					singleplayer();
 
 				}
@@ -1587,10 +1669,14 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 			sx = 0;
 			fx = 0;
 			st = 0;
+			sty=0;
 			fin = 0;
-			break;
+			finy=0 ;
+			sy = 0;
+			fy = 0;
+			
+			return true;
 		}
-
 		return true;
 	}
 }
