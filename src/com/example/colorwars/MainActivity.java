@@ -116,7 +116,7 @@ public class MainActivity extends Activity implements OnClickListener {
 						e.printStackTrace();
 					} finally {
 						Intent open = new Intent(MainActivity.this,
-								settings2Activity.class);
+								Cool_Settings.class);
 						startActivity(open);
 					}
 				}

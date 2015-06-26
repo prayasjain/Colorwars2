@@ -2,105 +2,111 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.colorwars"
     android:versionCode="1"
-    android:versionName="1.0" 
-    >
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="21"
-        />
+        android:targetSdkVersion="21" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher2"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-         >
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize" >
-           
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".AboutActivity" 
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".AboutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".SettingsActivity"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".SettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".PlayActivity"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".PlayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".WinActivity"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize"
-    	android:theme="@android:style/Theme.Dialog">
-            
+        <activity
+            android:name=".WinActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" >
         </activity>
-        <activity android:name=".compActivity"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".compActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".settings2Activity"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".settings2Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-         <activity android:name=".Temp"
-             android:screenOrientation="portrait"
-             android:theme="@android:style/Theme.Dialog"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".Temp"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" >
         </activity>
-        <activity android:name=".HTwin"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".HTwin"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".HelpActivity"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".HelpActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".CSoon"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".CSoon"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".comp3"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".comp3"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".PUps"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".PUps"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".BPlay"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-            
+        <activity
+            android:name=".ButtonSelector"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".Splash"
-             android:screenOrientation="portrait"
-    	android:configChanges="keyboardHidden|orientation|screenSize">
-             <intent-filter>
+        <activity
+            android:name=".BPlay"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Cool_Settings"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Splash"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        
     </application>
 
 </manifest>
