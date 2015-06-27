@@ -1201,10 +1201,10 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 			} else if (c2 == 2) {
 				b.setBackgroundResource(R.drawable.purple);
 
-			} else if (c3 == 3) {
+			} else if (c2 == 3) {
 				b.setBackgroundResource(R.drawable.redgreen);
 
-			} else if (c4 == 4) {
+			} else if (c2 == 4) {
 				b.setBackgroundResource(R.drawable.redyellow);
 
 			}
@@ -1215,10 +1215,10 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 			} else if (c2 == 2) {
 				b.setBackgroundResource(R.drawable.blue);
 
-			} else if (c3 == 3) {
+			} else if (c2 == 3) {
 				b.setBackgroundResource(R.drawable.bluegreen);
 
-			} else if (c4 == 4) {
+			} else if (c2 == 4) {
 				b.setBackgroundResource(R.drawable.blueyellow);
 
 			}
@@ -1230,10 +1230,10 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 			} else if (c2 == 2) {
 				b.setBackgroundResource(R.drawable.bluegreen);
 
-			} else if (c3 == 3) {
+			} else if (c2 == 3) {
 				b.setBackgroundResource(R.drawable.green);
 
-			} else if (c4 == 4) {
+			} else if (c2 == 4) {
 				b.setBackgroundResource(R.drawable.yellowgreen);
 
 			}
@@ -1244,16 +1244,17 @@ public class comp3 extends Activity implements OnClickListener, OnTouchListener 
 			} else if (c2 == 2) {
 				b.setBackgroundResource(R.drawable.blueyellow);
 
-			} else if (c3 == 3) {
+			} else if (c2 == 3) {
 				b.setBackgroundResource(R.drawable.yellowgreen);
 
-			} else if (c4 == 4) {
+			} else if (c2 == 4) {
 				b.setBackgroundResource(R.drawable.yellow);
 
 			}
 		}
 
 	}
+
 
 	// =================================================================================================================================================
 
