@@ -28,7 +28,7 @@ public class CSoon extends Activity implements android.view.View.OnClickListener
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
 				WindowManager.LayoutParams.FLAG_FULLSCREEN) ;
 		setContentView(R.layout.help_csoon);
-		fontbd =Typeface.createFromAsset(context.getAssets(), "comicbd.ttf");
+		fontbd =Typeface.createFromAsset(context.getAssets(), "font1.ttf");
 		font =Typeface.createFromAsset(context.getAssets(), "comic.ttf");
 		t[0] = (TextView)findViewById(R.id.tvcs1) ;
 		t[1] = (TextView)findViewById(R.id.tvcs2) ;
@@ -41,7 +41,7 @@ public class CSoon extends Activity implements android.view.View.OnClickListener
 		h =(TextView)findViewById(R.id.tvcsoon);
 		h.setTypeface(fontbd) ;
 		float sts= h.getTextSize() ;
-		h.setTextSize(sts/(getResources().getDisplayMetrics().density*2)) ;
+		h.setTextSize(sts/(getResources().getDisplayMetrics().density*(float)1.5)) ;
 		
 		
 		

@@ -121,12 +121,14 @@ public class Cool_Settings extends Activity implements OnClickListener {
 			play.putExtra("color1", color1);
 			
 			Cool_Settings.this.startActivity(play) ;
+			finish();
 			}
 		else if(ch=='M'&&color1!=color2){
 			Intent play=new Intent(Cool_Settings.this,PlayActivity.class) ;
 			play.putExtra("color1", color1);
 			play.putExtra("color2", color2);
 			Cool_Settings.this.startActivity(play) ;
+			finish();
 		}
 		}
 
@@ -190,5 +192,6 @@ public class Cool_Settings extends Activity implements OnClickListener {
 			}
 		}
 	}
+
 
 }

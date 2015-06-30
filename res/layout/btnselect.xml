@@ -4,32 +4,30 @@
     android:layout_height="match_parent"
     android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/bselectred"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/red"
-        />
 
-    <Button
-        android:id="@+id/bselectblue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       
-        android:background="@drawable/blue"
-         />
 
-    <Button
-        android:id="@+id/bselectgreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/green"
-         />
+        <Button
+            android:id="@+id/bselectred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/red" />
 
-    <Button
-        android:id="@+id/bselectyellow"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:background="@drawable/yellow" />
+        <Button
+            android:id="@+id/bselectblue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue" />
+
+        <Button
+            android:id="@+id/bselectgreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/green" />
+
+        <Button
+            android:id="@+id/bselectyellow"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/yellow" />
 
 </LinearLayout>

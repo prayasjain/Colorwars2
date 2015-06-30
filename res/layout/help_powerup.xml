@@ -74,7 +74,7 @@
 
 
         <TextView
-            android:id="@+id/tvbp3"
+            android:id="@+id/tvpups4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
@@ -84,7 +84,7 @@
             android:textColor="#FFF"
             android:textSize="18sp" />
 		<TextView
-            android:id="@+id/tvbp4"
+            android:id="@+id/tvpups5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"

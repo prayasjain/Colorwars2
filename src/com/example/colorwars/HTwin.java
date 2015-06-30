@@ -27,7 +27,7 @@ public class HTwin extends Activity implements OnClickListener {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
 				WindowManager.LayoutParams.FLAG_FULLSCREEN) ;
 		setContentView(R.layout.help_win);
-		fontbd =Typeface.createFromAsset(context.getAssets(), "comicbd.ttf");
+		fontbd =Typeface.createFromAsset(context.getAssets(), "font1.ttf");
 		font =Typeface.createFromAsset(context.getAssets(), "comic.ttf");
 		t[0] = (TextView)findViewById(R.id.tvhtw1) ;
 		t[1] = (TextView)findViewById(R.id.tvhtw2) ;
@@ -37,7 +37,7 @@ public class HTwin extends Activity implements OnClickListener {
 		h =(TextView)findViewById(R.id.tvhtw);
 		h.setTypeface(fontbd) ;
 		float sts= h.getTextSize() ;
-		h.setTextSize(sts/(getResources().getDisplayMetrics().density*2)) ;
+		h.setTextSize(sts/(getResources().getDisplayMetrics().density*(float)1.5)) ;
 		for(int i =0 ;i<4;i++){
 			t[i].setTypeface(font);
 		}

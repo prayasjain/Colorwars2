@@ -31,7 +31,7 @@ public class BPlay extends Activity implements OnClickListener {
 		setContentView(R.layout.help_bplay);
 		page = 1;
 		flips =(ViewFlipper)findViewById(R.id.flips);
-		fontbd = Typeface.createFromAsset(context.getAssets(), "comicbd.ttf");
+		fontbd = Typeface.createFromAsset(context.getAssets(), "font1.ttf");
 		font = Typeface.createFromAsset(context.getAssets(), "comic.ttf");
 		t[0] = (TextView) findViewById(R.id.tvbp1);
 		t[1] = (TextView) findViewById(R.id.tvbp2);
@@ -41,7 +41,7 @@ public class BPlay extends Activity implements OnClickListener {
 		h = (TextView) findViewById(R.id.tvbph);
 		h.setTypeface(fontbd);
 		float sts = h.getTextSize();
-		h.setTextSize(sts / (getResources().getDisplayMetrics().density * 2));
+		h.setTextSize(sts / (getResources().getDisplayMetrics().density * (float)1.5));
 
 		for (int i = 0; i < 4; i++) {
 			t[i].setTypeface(font);

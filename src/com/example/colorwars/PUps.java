@@ -19,7 +19,7 @@ public class PUps extends Activity implements OnClickListener {
 	Button next, prev, exit;
 	Context context = PUps.this;
 	TextView h;
-	TextView[] t = new TextView[4];
+	TextView[] t = new TextView[6];
 	ViewFlipper flippy;
 
 	@Override
@@ -32,19 +32,22 @@ public class PUps extends Activity implements OnClickListener {
 		setContentView(R.layout.help_powerup);
 		page = 1;
 		flippy = (ViewFlipper) findViewById(R.id.flippy);
-		fontbd = Typeface.createFromAsset(context.getAssets(), "comicbd.ttf");
+		fontbd = Typeface.createFromAsset(context.getAssets(), "font1.ttf");
 		font = Typeface.createFromAsset(context.getAssets(), "comic.ttf");
 		t[0] = (TextView) findViewById(R.id.tvpups1);
 		t[1] = (TextView) findViewById(R.id.tvpups2);
 		t[2] = (TextView) findViewById(R.id.tvpups3);
-		
+		t[3] = (TextView) findViewById(R.id.tvpups4);
+		t[4] = (TextView) findViewById(R.id.tvpups5);
 
 		h = (TextView) findViewById(R.id.tvpupsh);
 		h.setTypeface(fontbd);
 		float sts = h.getTextSize();
-		h.setTextSize(sts / (getResources().getDisplayMetrics().density * 2));
+		float fk=getResources().getDisplayMetrics().density  ;
+		fk=fk*(float)1.5 ;
+		h.setTextSize(sts /fk );
 
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 5; i++) {
 			t[i].setTypeface(font);
 		}
 		next = (Button) findViewById(R.id.bpupsnext);

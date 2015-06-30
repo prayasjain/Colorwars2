@@ -6,19 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ButtonSelector extends Activity implements
 		android.view.View.OnClickListener {
 	Button r, g, b, y;
 	Bundle sbundle;
 	Intent intent;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.btnselect);
-		setTitle("Choose Color");
+		
 		r = (Button) findViewById(R.id.bselectred);
 		g = (Button) findViewById(R.id.bselectgreen);
 		b = (Button) findViewById(R.id.bselectblue);

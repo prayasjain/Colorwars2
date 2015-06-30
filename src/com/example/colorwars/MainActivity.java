@@ -14,37 +14,42 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 	Button Play, About, Help;
-	Typeface font,comic;
-	TextView cw;
+	Typeface font, comic;
+	TextView cw,h;
 	ViewGroup ourView;
-	float pos ;
-	long tdiff ;
+	float pos;
+	long tdiff;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		
 	}
 
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		ourView = (ViewGroup) inflater.inflate(R.layout.activity_main, null);
 
-		setContentView(ourView);
-		
+		setContentView(R.layout.activity_main);
+
 		Play = (Button) findViewById(R.id.Button02);
 		Help = (Button) findViewById(R.id.button1);
 		About = (Button) findViewById(R.id.Button01);
+		h=(TextView)findViewById(R.id.tvmainbar) ;
 		Play.setOnClickListener(this);
 		Help.setOnClickListener(this);
 		About.setOnClickListener(this);
@@ -52,13 +57,16 @@ public class MainActivity extends Activity implements OnClickListener {
 		Context context = MainActivity.this;
 		font = Typeface.createFromAsset(context.getAssets(), "font1.ttf");
 		cw.setTypeface(font);
-		comic =Typeface.createFromAsset(context.getAssets(), "comic.ttf");
-	
+		comic = Typeface.createFromAsset(context.getAssets(), "comic.ttf");
 		
+		h.setTypeface(font);
 		Play.setTypeface(comic);
 		Help.setTypeface(comic);
 		About.setTypeface(comic);
 		
+		float sts = h.getTextSize() ;
+		h.setTextSize(sts/(getResources().getDisplayMetrics().density * (float) 1.5));
+
 	}
 
 	@Override
@@ -92,7 +100,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				public void run() {
 					try {
 
-						sleep(tdiff+250);
+						sleep(tdiff + 250);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					} finally {
@@ -111,7 +119,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				public void run() {
 					try {
 
-						sleep(tdiff+250);
+						sleep(tdiff + 250);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					} finally {
@@ -130,7 +138,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				public void run() {
 					try {
 
-						sleep(tdiff+250);
+						sleep(tdiff + 250);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					} finally {
@@ -151,14 +159,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		long time = SystemClock.currentThreadTimeMillis();
 		if (type == 1) {
-			
+
 			for (int i = 0; i < 600; i++) {
 				Play.animate().xBy(i);
 				About.animate().xBy(-i);
 				Help.animate().xBy(-i);
 				cw.animate().xBy(-i);
-				
-				
+
 			}
 
 		} else if (type == 3) {
@@ -176,6 +183,6 @@ public class MainActivity extends Activity implements OnClickListener {
 				cw.animate().xBy(-i);
 			}
 		}
-		tdiff=SystemClock.currentThreadTimeMillis()-time ;
+		tdiff = SystemClock.currentThreadTimeMillis() - time;
 	}
 }
