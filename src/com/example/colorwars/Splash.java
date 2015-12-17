@@ -71,6 +71,7 @@ public class Splash extends Activity implements OnTouchListener {
 		// TODO Auto-generated method stub
 		super.onPause();
 		ourSurfaceView.pause();
+		finish() ;
 	}
 
 	@Override
